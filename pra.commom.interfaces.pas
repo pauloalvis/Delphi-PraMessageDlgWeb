@@ -11,7 +11,6 @@ uses
   Vcl.Forms,
   Vcl.ExtCtrls,
   Data.DB,
-
   PraButtonStyle;
 
 type
