@@ -1,6 +1,6 @@
-﻿{******************************************************************************}
-{                   pauloalvis@hotmail.com | github.com/pauloalvis             }
-{******************************************************************************}
+﻿{ ****************************************************************************** }
+{ pauloalvis@hotmail.com | github.com/pauloalvis }
+{ ****************************************************************************** }
 
 unit pra.messagedlgweb;
 
@@ -88,6 +88,11 @@ begin
     FontFocused.Height := -19;
     FontFocused.Name := 'Tahoma';
     FontFocused.Style := [];
+    FontDown.Charset := DEFAULT_CHARSET;
+    FontDown.Height := -19;
+    FontDown.Name := 'Tahoma';
+    FontDown.Style := [];
+
     TabStop := True;
   end;
 end;
@@ -100,11 +105,15 @@ begin
     Width := 92;
     Brush.Color := $00AAAAAA;
     BrushFocused.Color := $00989898;
+    BrushDown.Color := $00AAAAAA;
     Pen.Style := psClear;
     PenFocused.Width := 3;
     PenFocused.Color := $00D1B27F;
     Font.Color := clWhite;
     FontFocused.Color := clWhite;
+    FontDown.Color := clWhite;
+    PenDown.Width := 3;
+    PenDown.Color := $00D1B27F;
     Caption := 'Não';
     TabOrder := 0;
     onClick := FFormMessage.NaoOnClick;
@@ -117,13 +126,22 @@ begin
   begin
     Left := 254;
     Width := 92;
+
     Brush.Color := 13991740;
     BrushFocused.Color := 13136427;
+    BrushDown.Color := 13136427;
+
     Pen.Color := 13395456;
     PenFocused.Color := 13395456;
     PenFocused.Width := 3;
+
+    PenDown.Color := 13395456;
+    PenDown.Width := 3;
+
     Font.Color := clWhite;
     FontFocused.Color := clWhite;
+    FontDown.Color := clWhite;
+
     Caption := 'OK';
     TabOrder := 0;
     onClick := FFormMessage.OKSimOnClick;
@@ -136,13 +154,22 @@ begin
   begin
     Width := 92;
     Left := 320;
+
     Brush.Color := 13991740;
     BrushFocused.Color := 13136427;
+    BrushDown.Color := 13991740;
+
     Pen.Color := 13395456;
     PenFocused.Color := 13395456;
     PenFocused.Width := 3;
+
+    PenDown.Color := 13395456;
+    PenDown.Width := 3;
+    FontDown.Color := clWhite;
+
     Font.Color := clWhite;
     FontFocused.Color := clWhite;
+
     Caption := 'Sim';
     TabOrder := 1;
     onClick := FFormMessage.OKSimOnClick;

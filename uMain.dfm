@@ -11,6 +11,7 @@ object Form43: TForm43
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poDesktopCenter
   WindowState = wsMaximized
   PixelsPerInch = 96
   TextHeight = 13
