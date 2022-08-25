@@ -16,7 +16,7 @@ object FPraViewMessageDlgWeb: TFPraViewMessageDlgWeb
   Font.Style = []
   KeyPreview = True
   OldCreateOrder = False
-  Position = poDesktopCenter
+  Position = poMainFormCenter
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   PixelsPerInch = 96
@@ -46,6 +46,7 @@ object FPraViewMessageDlgWeb: TFPraViewMessageDlgWeb
     Font.Name = 'Verdana'
     Font.Style = [fsBold]
     ParentFont = False
+    ExplicitWidth = 11
   end
   object lbText: TLabel
     AlignWithMargins = True
@@ -62,6 +63,7 @@ object FPraViewMessageDlgWeb: TFPraViewMessageDlgWeb
     Font.Name = 'Verdana'
     Font.Style = []
     ParentFont = False
+    ExplicitWidth = 5
   end
   object pnBotao: TPanel
     Left = 0
