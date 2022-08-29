@@ -76,8 +76,9 @@ begin
   with result do
   begin
     parent := FFormMessage.pnBotao;
-    Top := 28;
-    Height := 46;
+//    Top := 28;
+    Top := (parent.Height - Height) div 2;
+    Height := 36;
     Cursor := crHandPoint;
     Pen.Style := psClear;
     Font.Charset := DEFAULT_CHARSET;
@@ -101,8 +102,9 @@ procedure TPraMessageDlgWeb.CreateButton_NAO;
 begin
   with CreateButton do
   begin
-    Left := 222;
+//    Left := 222;
     Width := 92;
+    Left := (parent.Width - 190) div 2;
     Brush.Color := $00AAAAAA;
     BrushFocused.Color := $00989898;
     BrushDown.Color := $00AAAAAA;
@@ -124,8 +126,9 @@ procedure TPraMessageDlgWeb.CreateButton_OK;
 begin
   with CreateButton do
   begin
-    Left := 254;
+//    Left := 254;
     Width := 92;
+    Left := (parent.Width - Width) div 2;
 
     Brush.Color := 13991740;
     BrushFocused.Color := 13136427;
@@ -153,7 +156,8 @@ begin
   with CreateButton do
   begin
     Width := 92;
-    Left := 320;
+//    Left := (parent.Width - ) div 2;
+    Left := 203;
 
     Brush.Color := 13991740;
     BrushFocused.Color := 13136427;
