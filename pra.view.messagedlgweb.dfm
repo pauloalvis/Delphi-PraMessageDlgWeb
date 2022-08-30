@@ -4,11 +4,11 @@ object FPraViewMessageDlgWeb: TFPraViewMessageDlgWeb
   BorderIcons = []
   BorderStyle = bsNone
   Caption = 'FPraViewMessageDlgWeb'
-  ClientHeight = 338
-  ClientWidth = 600
+  ClientHeight = 215
+  ClientWidth = 400
   Color = clWhite
-  Constraints.MinHeight = 335
-  Constraints.MinWidth = 600
+  Constraints.MinHeight = 200
+  Constraints.MinWidth = 400
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -16,7 +16,7 @@ object FPraViewMessageDlgWeb: TFPraViewMessageDlgWeb
   Font.Style = []
   KeyPreview = True
   OldCreateOrder = False
-  Position = poDesktopCenter
+  Position = poMainFormCenter
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   PixelsPerInch = 96
@@ -24,34 +24,37 @@ object FPraViewMessageDlgWeb: TFPraViewMessageDlgWeb
   object imgMessage: TImage
     Left = 0
     Top = 0
-    Width = 600
-    Height = 169
+    Width = 400
+    Height = 95
     Margins.Left = 200
     Margins.Top = 40
     Margins.Right = 200
     Align = alTop
     Center = True
     Proportional = True
+    ExplicitWidth = 517
   end
   object lbMessage: TLabel
     Left = 0
-    Top = 169
-    Width = 600
-    Height = 40
+    Top = 95
+    Width = 400
+    Height = 25
     Align = alTop
     Alignment = taCenter
     Font.Charset = DEFAULT_CHARSET
     Font.Color = 5855577
-    Font.Height = -33
+    Font.Height = -20
     Font.Name = 'Verdana'
     Font.Style = [fsBold]
     ParentFont = False
+    ExplicitTop = 105
+    ExplicitWidth = 7
   end
   object lbText: TLabel
     AlignWithMargins = True
     Left = 3
-    Top = 214
-    Width = 594
+    Top = 125
+    Width = 394
     Height = 16
     Margins.Top = 5
     Align = alTop
@@ -62,23 +65,28 @@ object FPraViewMessageDlgWeb: TFPraViewMessageDlgWeb
     Font.Name = 'Verdana'
     Font.Style = []
     ParentFont = False
+    ExplicitTop = 214
+    ExplicitWidth = 5
   end
   object pnBotao: TPanel
     Left = 0
-    Top = 240
-    Width = 600
-    Height = 98
+    Top = 147
+    Width = 400
+    Height = 68
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitLeft = -8
+    ExplicitTop = 208
+    ExplicitWidth = 600
   end
   object imList: TImageList
     ColorDepth = cd32Bit
     DrawingStyle = dsTransparent
     Height = 124
     Width = 124
-    Left = 496
-    Top = 216
+    Left = 352
+    Top = 40
     Bitmap = {
       494C01010500090004007C007C00FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000F0010000F800000001002000000000000082

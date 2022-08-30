@@ -7,14 +7,20 @@ unit pra.messagedlgweb;
 interface
 
 uses
-  pra.commom.interfaces,
-  Vcl.Dialogs,
   PraButtonStyle,
+
+  VCl.Forms,
+
+  Vcl.Dialogs,
+
+  pra.commom.interfaces,
   pra.view.messagedlgweb;
 
 type
   TPraMessageDlgWeb = class(TInterfacedObject, iPraMessageDlgWeb)
   private
+    FFormBack : TForm;
+
     FFormMessage: TFPraViewMessageDlgWeb;
 
     procedure MessageDlgSuccess(const pText: String);
@@ -39,8 +45,10 @@ implementation
 
 uses
   System.SysUtils,
+
   Vcl.Controls,
   Vcl.Graphics,
+
   Winapi.Windows;
 
 procedure TPraMessageDlgWeb.MessageDlgWarning(const pText: String);
@@ -60,6 +68,8 @@ end;
 
 function TPraMessageDlgWeb.ShowMessageDlg(const pText: String): Boolean;
 begin
+  FFormBack.Parent := Application.MainForm;
+  FFormBack.Show;
   FFormMessage.lbText.Caption := pText;
   result := FFormMessage.ShowModal = mrOk;
 end;
@@ -67,6 +77,13 @@ end;
 constructor TPraMessageDlgWeb.Create;
 begin
   FFormMessage := TFPraViewMessageDlgWeb.Create(nil);
+
+  FFormBack := TForm.Create(nil);
+  FFormBack.Align := TAlign.alClient;
+  FFormBack.AlphaBlendValue := 160;
+  FFormBack.AlphaBlend := True;
+  FFormBack.BorderStyle := bsNone;
+  FFormBack.Color := clBlack;
 end;
 
 function TPraMessageDlgWeb.CreateButton: TPraButtonStyle;
@@ -76,8 +93,9 @@ begin
   with result do
   begin
     parent := FFormMessage.pnBotao;
-    Top := 28;
-    Height := 46;
+//    Top := 28;
+    Top := (parent.Height - Height) div 2;
+    Height := 36;
     Cursor := crHandPoint;
     Pen.Style := psClear;
     Font.Charset := DEFAULT_CHARSET;
@@ -101,8 +119,9 @@ procedure TPraMessageDlgWeb.CreateButton_NAO;
 begin
   with CreateButton do
   begin
-    Left := 222;
+//    Left := 222;
     Width := 92;
+    Left := (parent.Width - 190) div 2;
     Brush.Color := $00AAAAAA;
     BrushFocused.Color := $00989898;
     BrushDown.Color := $00AAAAAA;
@@ -124,8 +143,9 @@ procedure TPraMessageDlgWeb.CreateButton_OK;
 begin
   with CreateButton do
   begin
-    Left := 254;
+//    Left := 254;
     Width := 92;
+    Left := (parent.Width - Width) div 2;
 
     Brush.Color := 13991740;
     BrushFocused.Color := 13136427;
@@ -153,7 +173,8 @@ begin
   with CreateButton do
   begin
     Width := 92;
-    Left := 320;
+//    Left := (parent.Width - ) div 2;
+    Left := 203;
 
     Brush.Color := 13991740;
     BrushFocused.Color := 13136427;
@@ -178,6 +199,7 @@ end;
 
 destructor TPraMessageDlgWeb.Destroy;
 begin
+  FreeAndNil(FFormBack);
   FreeandNil(FFormMessage);
 
   inherited;
